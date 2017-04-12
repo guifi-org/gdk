@@ -47,10 +47,11 @@ Vagrant.configure('2') do |config|
 
     machine.vm.box = 'debian/jessie64'
 
-    machine.vm.network 'private_network', ip: '192.168.20.50'
+    machine.vm.network 'private_network', ip: '192.168.30.50'
     machine.vm.synced_folder '../guifi', '/var/www/html/drupal-6.37/sites/all/modules/guifi'
     machine.vm.synced_folder '../budgets', '/var/www/html/drupal-6.37/sites/all/modules/budgets'
     machine.vm.synced_folder '../theme_guifinet2011', '/var/www/html/drupal-6.37/sites/all/themes/theme_guifinet2011'
+    machine.vm.synced_folder '../guifi-api', '/var/www/html/guifi-api'
 
   end
 
