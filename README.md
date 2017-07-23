@@ -1,3 +1,23 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Guifi Development Kit (GDK)](#guifi-development-kit-gdk)
+- [Pre-requisites](#pre-requisites)
+  - [Installation on Debian 8 Jessie](#installation-on-debian-8-jessie)
+    - [VirtualBox](#virtualbox)
+    - [Vagrant](#vagrant)
+  - [Installation on Debian 9 Stretch](#installation-on-debian-9-stretch)
+    - [VirtualBox](#virtualbox-1)
+    - [Vagrant](#vagrant-1)
+  - [MacOS X](#macos-x)
+    - [VirtualBox](#virtualbox-2)
+    - [Vagrant](#vagrant-2)
+- [Preparing the environment](#preparing-the-environment)
+- [Deployment](#deployment)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Guifi Development Kit (GDK)
 ===========================
 
@@ -32,6 +52,35 @@ Install Vagrant and the required libraries and packages:
 ```
 apt-get install vagrant zlib1g-dev git
 ```
+## Installation on Debian 9 Stretch
+
+To set up the GDK on a Debian 9 Stretch host, run the following steps to install the required packages.
+
+### VirtualBox
+
+Edit this file with `editor /etc/apt/sources.list.d/vagrant.list` and add this line:
+```
+deb http://download.virtualbox.org/virtualbox/debian stretch contrib
+```
+Add Oracle Virtualbox repo public key:
+```
+curl -O https://www.virtualbox.org/download/oracle_vbox_2016.asc
+sudo apt-key add oracle_vbox_2016.asc
+```
+Update the packages repository and install virtualbox
+```
+apt-get update
+apt-get install virtualbox-5.1
+```
+
+src https://wiki.debian.org/VirtualBox#Debian_9_.22Stretch.22
+
+### Vagrant
+Install Vagrant and the required libraries and packages:
+```
+apt-get install vagrant zlib1g-dev git
+```
+
 ## MacOS X
 
 ### VirtualBox
